@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="donker">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page home grid-basic-page getting-started card-background-page home">
+  <div class="home-hello">
+    <img src="assets/home/headimage.jpg">
+  </div>
+
+  <div>
+    <ion-slides slidesPerView="3" pager style="height:30%; background-color:#2980b9;">
+      <ion-slide *ngFor="let slide of slides" class="slide-c">
+        <img [src]="slide.image" class="slide-image" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-card>
+    <img src="https://4.bp.blogspot.com/-7NPKSdqV2PU/WTmfkIEojGI/AAAAAAAAAU4/-QEfo0DpqcIwYgXRmK1HbaxAxypS6q8zwCLcB/s320/akreditasi.png" />
+  </ion-card>
+
+  <ion-card *ngFor="let infohome of infohome | async">
+    <img src="{{ infohome.duration }}" />
+    <ion-card-content>
+      <p style="text-align: justify;">{{ infohome.summary }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="home-hello" style="background-color: #2980b9; color:white; text-align: center;" padding>
+    Copyright &copy; 2017 Tooko Indonesia
+  </div>
+</ion-content>
